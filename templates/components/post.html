@@ -1,0 +1,12 @@
+<a class="p-1" href="{{ id }}"
+  ><li
+    class="p-4 mb-2 text-center transition bg-white rounded-md shadow-md hover:shadow-lg w-52"
+    id="post-{{loop.index}}"
+  >
+    <div class="font-bold">Content:</div>
+    {% match post.content %} {% when Some with (content) %} {{ content.as_str()
+    }} {% when None %}
+    <i>No content.</i>
+    {% endmatch %}
+  </li></a
+>
