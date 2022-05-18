@@ -15,6 +15,12 @@ More information at [template.strct.net](https://template.strct.net)
 - run `npx tailwindcss-cli build -c ./templates/tailwind.config.js -o ./templates/style.css`
 - `cargo run build --release`
 
+
+## Troubleshooting
+| Message | Solution |
+|---------|----------|
+|`couldn't read src\../templates/style.css: The system cannot find the file specified. (os error 2)`|You have to build the style.css file first. Check step 2 of the setup.|
+
 ## Need help?
 
 [Join the strct.net Discord server](https://discord.strct.net/) and you might get suspiciously fast replies

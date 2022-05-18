@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome!</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="stylesheet" href="style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome!</title>
-</head>
+  <body>
+    <div class="mx-auto my-2 bg-gray-400 lg:w-2/4 md:w-3/4">
+      <div class="p-2 bg-white border-2 border-black">
+        <div class="mt-3 mb-5 text-2xl font-bold">
+          <a href="https://github.com/str-ct/tide-rbatis-askama-crud"
+            >Tide/Rbatis/Askama</a
+          >
+          Template Repository Default Page
+        </div>
+        <p class="w-full text-lg font-bold text-center text-white bg-red-700">
+          It works!
+        </p>
+        <div>
+          This is the default Index Template. It serves as a small guide to help
+          you get started with the Tide / Rbatis / Askama stack.
+        </div>
 
-<body>
-  <div class="mx-auto my-2 bg-gray-400 lg:w-2/4 md:w-3/4">
-    <div class="p-2 bg-white border-2 border-black">
-      <div class="mt-3 mb-5 text-2xl font-bold">
-        <a href="https://github.com/str-ct/tide-rbatis-askama-crud">Tide/Rbatis/Askama</a>
-        Template Repository Default Page
-      </div>
-      <p class="w-full text-lg font-bold text-center text-white bg-red-700">
-        It works!
-      </p>
-      <div>
-        This is the default Index Template. It serves as a small guide to help
-        you get started with the Tide / Rbatis / Askama stack.
-      </div>
+        <div>
+          You can find the main repository
+          <a
+            class="text-blue-700"
+            href="https://github.com/str-ct/tide-rbatis-askama-crud"
+            >here</a
+          >.
+        </div>
 
-      <div>
-        You can find the main repository
-        <a class="text-blue-700" href="https://github.com/str-ct/tide-rbatis-askama-crud">here</a>.
-      </div>
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Setup
+        </h2>
+        <ul class="my-4 ml-8 list-disc list-inside">
+          <li>Copy and modify the .env.example file to .env</li>
+          <li>
+            run `npx tailwindcss-cli build -c ./templates/tailwind.config.js -o
+            ./templates/style.css`
+          </li>
+          <li>
+            A docker-compose.yml file for a quick PostgreSQL database is
+            provided in the root directory.
+          </li>
+          <li>"cargo run/build"</li>
+        </ul>
 
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Setup
-      </h2>
-      <ul class="my-4 ml-8 list-disc list-inside">
-        <li>Copy and modify the .env.example file to .env</li>
-        <li>
-          run `npx tailwindcss-cli build -c ./templates/tailwind.config.js -o
-          ./templates/style.css`
-        </li>
-        <li>
-          A docker-compose.yml file for a quick PostgreSQL database is
-          provided in the root directory.
-        </li>
-        <li>"cargo run/build"</li>
-      </ul>
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Building for production
+        </h2>
 
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Building for production
-      </h2>
+        <ul class="my-4 ml-8 list-disc list-inside">
+          <li>
+            Modify the `./templates/tailwind.config.js` file to enable purge
+          </li>
+          <li>
+            run `npx tailwindcss-cli build -c ./templates/tailwind.config.js -o
+            ./templates/style.css`
+          </li>
+          <li>`cargo run build --release`</li>
+        </ul>
 
-      <ul class="my-4 ml-8 list-disc list-inside">
-        <li>
-          Modify the `./templates/tailwind.config.js` file to enable purge
-        </li>
-        <li>
-          run `npx tailwindcss-cli build -c ./templates/tailwind.config.js -o
-          ./templates/style.css`
-        </li>
-        <li>`cargo run build --release`</li>
-      </ul>
-
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Creating a new Template
-      </h2>
-      <div>
-        First and foremost, you should read the
-        <a class="text-blue-700" href="https://djc.github.io/askama/">official documentation for Askama</a>, the
-        templating system we're gonna use. It is very similar to
-        Jinja2, so it might look familar.
-      </div>
-      <h3 class="mt-2">Create a new .html file in the /templates folder</h3>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Creating a new Template
+        </h2>
+        <div>
+          First and foremost, you should read the
+          <a class="text-blue-700" href="https://djc.github.io/askama/"
+            >official documentation for Askama</a
+          >, the templating system we're gonna use. It is very similar to
+          Jinja2, so it might look familar.
+        </div>
+        <h3 class="mt-2">Create a new .html file in the /templates folder</h3>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
 // templates/my_template.html
 
 {% extends "base.html" %}
@@ -85,22 +93,25 @@
   {% endmatch %}
 
   {% endblock content %}
-</pre>
+</pre
+        >
 
-      <ul class="my-4 ml-8 list-disc list-inside">
-        <li>
-          "base.html" is the base template that every template should inherit.
-          Check it out! You might want to make changes to it, such as changing
-          the website title.
-        </li>
-        <li>
-          Of course you don't *have* to do that. Replying with small
-          components à la HTMX/Alpine.js is fine.
-        </li>
-      </ul>
+        <ul class="my-4 ml-8 list-disc list-inside">
+          <li>
+            "base.html" is the base template that every template should inherit.
+            Check it out! You might want to make changes to it, such as changing
+            the website title.
+          </li>
+          <li>
+            Of course you don't *have* to do that. Replying with small
+            components à la HTMX/Alpine.js is fine.
+          </li>
+        </ul>
 
-      <p>Now, visit /src/models.rs and define your new template:</p>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
+        <p>Now, visit /src/models.rs and define your new template:</p>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
 // src/models.rs
 
 #[derive(Template)]
@@ -108,13 +119,16 @@
 pub struct MyTemplate {
     pub message: Option&ltString&gt,
 }
-</pre>
+</pre
+        >
 
-      <div>
-        To render our new template, we need to create a new handler. We also
-        need to import it
-      </div>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
+        <div>
+          To render our new template, we need to create a new handler, and
+          import it.
+        </div>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
 // src/handlers.rs
 
 // Import the new template
@@ -128,67 +142,84 @@ pub async fn handle_my_template(_req: tide::Request&lt()&gt) -> tide::Result {
   // Render the template .into() a tide response and reply
   Ok(res.into())
 }
-</pre>
+</pre
+        >
 
-      Lastly, to be able to actually visit the new template, you need to add
-      its route to main.rs.
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
-// src/main.rs
+        Lastly, to be able to actually visit the new template, you need to add
+        its route to app.rs.
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
+// src/app.rs
 use crate::handlers::handle_my_template;
 ...
 app.at("/hello").get(handle_my_template);
 ...
-</pre>
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Basic Rbatis usage
-      </h2>
-      <p>
-        Rbatis is a powerful and fast ORM for Rust. It supports MySQL, SQLite,
-        PostgreSQL and others. As always, it's recommended to read the
-        <a class="text-blue-700" href="https://rbatis.github.io/rbatis.io/#/en/">official Documentation</a>.
-      </p>
-      <p class="mb-1">
-        This template comes with a simple CRUD implemented in
-        src/handlers/post.rs. Here's a quick overview:
-      </p>
-      <p>First, define your model</p>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
+</pre
+        >
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Basic Rbatis usage
+        </h2>
+        <p>
+          Rbatis is a powerful and fast ORM for Rust. It supports MySQL, SQLite,
+          PostgreSQL and others. As always, it's recommended to read the
+          <a
+            class="text-blue-700"
+            href="https://rbatis.github.io/rbatis.io/#/en/"
+            >official Documentation</a
+          >.
+        </p>
+        <p class="mb-1">
+          This template comes with a simple CRUD implemented in
+          src/handlers/post.rs. Here's a quick overview:
+        </p>
+        <p>First, define your model</p>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
 // src/models.rs
 
-use rbatis::crud_enable;
+use rbatis::crud_table;
 
-#[crud_enable]
+#[crud_table]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Post {
   pub id: Option&ltString&gt,
   pub content: Option&ltString&gt,
 }
-</pre>
-      <p>Now you can run Rbatis queries directly in your handler.</p>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
+</pre
+        >
+        <p>Now you can run Rbatis queries directly in your handler.</p>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
 use rbatis::crud::CRUD;
 
 pub async fn your_handler(mut req: tide::Request&lt()&gt) -> tide::Result {
 
   // Get all posts in the database
-  let all_posts: Vec&ltPost&gt = RB.fetch_list::&ltPost&gt("").await?;
+  let all_posts: Vec&ltPost&gt = RB.fetch_list::&ltPost&gt().await?;
 
   // Or, get a single post by ID.
   let post_id = "12345";
-  let mut post_by_id: Post = RB.fetch_by_id::&ltPost&gt("", &post_id.to_string()).await?;
+  let mut post_by_id: Post = RB.fetch_by_column::&ltPost, _&gt("id", &post_id.to_string()).await?;
 
   // Update by ID (the ID is already in the Post struct,
   // which is why we don't need to specify it again.)
   post_by_id.content= Some("Cool! New content.".to_string());
-  RB.update_by_id::&ltPost&gt("", &mut post_by_id).await?;
+  RB.update_by_column::&ltPost&gt("id", &post_by_id).await?;
 
   Ok(json!(post_by_id).into())
 }
-</pre>
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Try the built in CRUD!
-      </h2>
+</pre
+        >
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Try the built in CRUD!
+        </h2>
 
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
 // Create
 
 curl localhost:3030/post \
@@ -197,93 +228,119 @@ curl localhost:3030/post \
 
 // Read
 
-curl localhost:3030/0ce3c96583
+curl localhost:3030/post/0ce3c96583
 // {"content":"Hello!","id":"0ce3c96583"}
 
 // Update
 
-curl localhost:3030/post \
--X PATCH -d '{"id": "0ce3c96583", "content": "New content!"}'
-// {"content":"New content!","id":"0ce3c96583"}
+curl localhost:3030/post/0ce3c96583 \
+-X PATCH -d '{"content": "New content!"}'
 
 // Delete
 
-curl localhost:3030/post -X DELETE -d '{"id": "0ce3c96583"}'
+curl localhost:3030/post/0ce3c96583 -X DELETE
 
-</pre>
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Migrations
-      </h2>
+</pre
+        >
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Migrations
+        </h2>
 
-      <p class="text-red-500">Work in progress!</p>
-      <p>
-        This template uses
-        <a class="text-blue-700" href="https://rust-db.github.io/barrel/">Barrel</a>
-        to define migrations.
-      </p>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
+        <p class="text-red-500">Work in progress!</p>
+        <p>
+          This template uses
+          <a class="text-blue-700" href="https://rust-db.github.io/barrel/"
+            >Barrel</a
+          >
+          to define migrations.
+        </p>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
 m.create_table_if_not_exists("post", |t| {
   t.add_column("id", types::varchar(255));
   t.add_column("content", types::varchar(255));
 });
-</pre>
-      <p>
-        There is no fancy migration runner included (yet), so for now, we just
-        run them via Rbatis.
-      </p>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
-RB.exec("", migration).await?;
-</pre>
-      <p>
-        To use another database engine, adjust the features in cargo.toml.
-      </p>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
-// cargo.toml
-// async-io-postgres, async-io-mysql, async-io-sqlite
-rbatis = { ... , features = ["async-io-postgres"] }
+</pre
+        >
+        <p>
+          There is no fancy migration runner included (yet), so for now, we just
+          run them via Rbatis.
+        </p>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
+RB.exec(migration, vec![Bson::Null]).await?;
+      </pre
+        >
+        <p>
+          To use another database engine, adjust the features in cargo.toml.
+        </p>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
+// Cargo.toml
+// refer to: https://rbatis.github.io/rbatis.io/#/en/?id=conditional-compilation-choose-async-runtime-or-driver
+rbatis = { ... , features = ["..."] }
 
 // pg, sqlite3, mysql
 barrel = { ... , features = ["pg"] }
-</pre>
-      <p>...and adjust the function in main.rs</p>
-      <pre class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted">
-// main.rs
+</pre
+        >
+        <p>...and adjust the function in app.rs</p>
+        <pre
+          class="p-3 mx-1 mt-2 mb-3 text-sm bg-gray-100 border border-gray-700 border-dotted"
+        >
+// app.rs
 
 // Pg, MySql, Sqlite -------
                            |
 ...                        V
 let migration = &m.make::&ltPg&gt();
 ...
-</pre>
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Documentation Links
-      </h2>
-      <ul class="my-4 ml-8 list-disc list-inside">
-        <li>
-          <a class="text-blue-700" href="https://github.com/str-ct/tide-rbatis-askama-crud">README.md</a>
-        </li>
-        <li>
-          <a class="text-blue-700" href="https://rbatis.github.io/rbatis.io/#/en/">Rbatis</a>
-        </li>
-        <li>
-          <a class="text-blue-700" href="https://djc.github.io/askama/">Askama</a>
-        </li>
-        <li>
-          <a class="text-blue-700" href="https://tailwindcss.com/docs">TailwindCSS</a>
-        </li>
+</pre
+        >
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Documentation Links
+        </h2>
+        <ul class="my-4 ml-8 list-disc list-inside">
+          <li>
+            <a
+              class="text-blue-700"
+              href="https://github.com/str-ct/tide-rbatis-askama-crud"
+              >README.md</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-blue-700"
+              href="https://rbatis.github.io/rbatis.io/#/en/"
+              >Rbatis</a
+            >
+          </li>
+          <li>
+            <a class="text-blue-700" href="https://djc.github.io/askama/"
+              >Askama</a
+            >
+          </li>
+          <li>
+            <a class="text-blue-700" href="https://tailwindcss.com/docs"
+              >TailwindCSS</a
+            >
+          </li>
+        </ul>
 
-      </ul>
-
-      <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
-        Questions?
-      </h2>
-      <div>
-        If you have any questions, open a Github Issue or talk to us in the
-        <a class="text-blue-700" href="https://discord.strct.net/">strct.net Discord Server</a>.
+        <h2 class="w-full text-lg font-bold text-center text-white bg-gray-400">
+          Questions?
+        </h2>
+        <div>
+          If you have any questions, open a Github Issue or talk to us in the
+          <a class="text-blue-700" href="https://discord.strct.net/"
+            >strct.net Discord Server</a
+          >.
+        </div>
+        <div>Pull requests are appreciated!</div>
       </div>
-      <div>Pull requests are appreciated!</div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

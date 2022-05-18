@@ -1,8 +1,10 @@
 use askama::Template;
 
-use rbatis::crud_enable;
-#[crud_enable]
-#[derive(Debug)]
+use rbatis::crud_table;
+use serde::{Deserialize, Serialize};
+
+#[crud_table]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Post {
     pub id: Option<String>,
     pub content: Option<String>,
